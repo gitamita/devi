@@ -16,14 +16,14 @@ printf '\nVisit https://dashboard.ngrok.com/get-started/setup and Copy the autht
 read -p "Paste authtoken here (Copy and Right-click to paste): " CRP
 printf '\nDownloading NGROK... \n'
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.zip
-wget https://raw.githubusercontent.com/mrX04/Cisco-DevNet-Sandbox/master/ngrok-choice-linux.sh
+wget https://raw.githubusercontent.com/gitamita/devi/main/ngrok-choice-linux.sh
 ./ngrok authtoken $CRP
 clear
 chmod +x ngrok-choice-linux.sh
 ./ngrok-choice-linux.sh
 mkdir W10
 cd W10
-wget -O W10.vhd https://app.vagrantup.com/thuonghai2711/boxes/W2012DevBox/versions/1.0.0/providers/virtualboxw10.box
+wget -O W10.vhd https://app.vagrantup.com/devona/boxes/win10/versions/1.0.0/providers/win10.box
 clear
 VBoxManage createvm --name W10 --ostype Windows10_64 --register --basefolder `pwd` 
 VBoxManage modifyvm W10 --ioapic on 
